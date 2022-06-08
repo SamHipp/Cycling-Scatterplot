@@ -1,0 +1,59 @@
+@use "./style-dependencies/Mixins" as *;
+@use "./style-dependencies/Variables" as v;
+
+body {
+    background: linear-gradient(45deg, #888, #aaa);
+    @include flex(column, center, center);
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.app-container {
+    height: max-content;
+    width: max-content;
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: .2rem .2rem .2rem rgba($color: #000000, $alpha: .4);
+    @include flex(column, center, space-between);
+    background-color: white;
+}
+
+.title {
+    @include text-styles(2rem, 500);
+}
+
+.graph-container {
+    position: relative;
+}
+
+.tooltip {
+    @include flex(column, center, space-between);
+    @include text-styles(1rem, 100);
+    line-height: 1.5rem;
+    margin: 0;
+    padding: 0;
+    height: 10rem;
+    width: 12rem;
+    position: absolute;
+    background-color: black;
+    opacity: .8;
+    transition: all 200ms ease;
+    border-radius: .5rem;
+    color: white;
+}
+
+.tooltip-text {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.hidden {
+    display: hidden;
+}
+
+.legend-text {
+    @include text-styles(1rem, 100);
+}
